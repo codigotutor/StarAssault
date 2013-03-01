@@ -4,6 +4,8 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Bob {
+	
+	float stateTime = 0;
 
 	public enum State {
 		IDLE, WALKING, JUMPING, DYING
@@ -39,10 +41,13 @@ public class Bob {
 		this.state = newState;
 	}
 
+	
 	public void update(float delta) {
-		position.add(velocity.tmp().mul(delta));
+		stateTime += delta;
+		position.add(velocity.tmp().mul(delta)); 
 	}
 
+	
 	public void setFacingLeft(boolean b) {
 		this.facingLeft = b;
 	}
@@ -53,6 +58,22 @@ public class Bob {
 
 	public Vector2 getAcceleration() {
 		return acceleration;
+	}
+
+	
+	public State getState() {
+		
+		return this.state;
+	}
+
+	public boolean isFacingLeft() {
+		
+		return this.facingLeft;
+	}
+
+	public float getStateTime() {
+		
+		return this.stateTime;
 	}
 	
 }

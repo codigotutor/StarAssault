@@ -108,8 +108,8 @@ public class GameScreen implements Screen, InputProcessor{
 			
 			//para que no funciones el mouse como un touch
 			//solo funcionaria con el touch
-			if (!Gdx.app.getType().equals(ApplicationType.Android))
-				return false;
+			//if (!Gdx.app.getType().equals(ApplicationType.Android))
+				//return false;
 			
 			
 			if (x < width / 2 && y > height / 2) {
@@ -146,7 +146,6 @@ public class GameScreen implements Screen, InputProcessor{
 
 		@Override
 		public boolean mouseMoved(int screenX, int screenY) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 		
